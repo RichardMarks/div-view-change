@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 // class App extends Component {
@@ -18,24 +18,42 @@ import './App.css';
 //   }
 // }
 
-
 class NameForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      height: '',
+      width: '',
+      color: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleHeightChange = this.handleHeightChange.bind(this);
+    this.handleWidthChange = this.handleWidthChange.bind(this);
+    this.handleColorChange = this.handleColorChange.bind(this);
+    
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleHeightChange(event) {
+    this.setState({
+      height: event.target.value,
+    });
+  }
+   handleWidthChange(event) {
+    this.setState({
+      width: event.target.value,
+    });
+  }
+   handleColorChange(event) {
+    this.setState({
+      color: event.target.value,
+    });
   }
 
   handleSubmit(event) {
-    console.log('A height was submitted: ' + this.state.value);
+    console.log('A height was submitted: ' + this.state.height);
+    console.log('A width was submitted: ' + this.state.width);
+    console.log('A color was submitted: ' + this.state.color);
     event.preventDefault();
   }
 
@@ -44,9 +62,17 @@ class NameForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Height:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" height={this.state.height} onChange={this.handleHeightChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <label>
+          Width:
+          <input type="text" width={this.state.width} onChange={this.handleWidthChange} />
+        </label>
+        <label>
+          Color:
+          <input type="text" color={this.state.color} onChange={this.handleColorChange} />
+        </label>
+        <input type="submit" value="Update" />
       </form>
     );
   }
