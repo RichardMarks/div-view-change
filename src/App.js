@@ -81,7 +81,11 @@ class NameForm extends Component {
           <input type='submit' value='Update' />
         </form>
         <div className='appContainer'>
-          <div className='default'>
+          <div className='default' style={
+            {backgroundColor: this.state.color || 'blue',
+            height: parseInt(this.state.height,10) || '128px',
+            width: parseInt(this.state.width,10) || '128px'}
+          }>
           </div>
         </div>
       </div>
