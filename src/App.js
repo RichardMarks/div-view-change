@@ -1,23 +1,7 @@
 import React, { Component } from 'react'
 import  './App.css'
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className='App'>
-//         <div className='App-header'>
-//           <img src={logo} className='App-logo' alt='logo' />
-//           <h2>Welcome to React</h2>
-//         </div>
-//         <p className='App-intro'>
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     )
-//   }
-// }
-
-class NameForm extends Component {
+class ChangeDivForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -25,40 +9,20 @@ class NameForm extends Component {
       width: '',
       color: ''
     }
-
-    this.handleHeightChange = this.handleHeightChange.bind(this)
-    this.handleWidthChange = this.handleWidthChange.bind(this)
-    this.handleColorChange = this.handleColorChange.bind(this)
     
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleHeightChange(event) {
-    this.setState({
-      height: event.target.value,
-    })
-  }
-   handleWidthChange(event) {
-    this.setState({
-      width: event.target.value,
-    })
-  }
-   handleColorChange(event) {
-    this.setState({
-      color: event.target.value,
-    })
-  }
   handleSubmit(event) {
+    console.log(event.target.height.value)
+    console.log(event.target.width.value)
+    console.log(event.target.color.value)
+    this.setState({
+      height: parseInt(event.target.height.value,10),
+      width: parseInt(event.target.width.value, 10),
+      color: event.target.color.value.toString(),
+    })
 
-    // if(!typeof(this.state.width) === 'number') {
-    //   return
-    // }
-    // if(!typeof(this.state.height) === 'number') {
-    //   return
-    // }
-    console.log('A height was submitted: ' + this.state.height)
-    console.log('A width was submitted: ' + this.state.width)
-    console.log('A color was submitted: ' + this.state.color)
     event.preventDefault()
   }
 
@@ -68,15 +32,15 @@ class NameForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Height:
-            <input type='text' height={this.state.height} onChange={this.handleHeightChange} />
+            <input name='height' type='text' height={this.state.height}/>
           </label>
           <label>
             Width:
-            <input type='text' width={this.state.width} onChange={this.handleWidthChange} />
+            <input name='width' type='text' width={this.state.width}/>
           </label>
           <label>
             Color:
-            <input type='text' color={this.state.color} onChange={this.handleColorChange} />
+            <input name='color' type='text' color={this.state.color}/>
           </label>
           <input type='submit' value='Update' />
         </form>
@@ -94,11 +58,4 @@ class NameForm extends Component {
   }
 }
 
-
-
-
-// ReactDOM.render(
-//   <NameForm />,
-//   document.getElementById('root')
-// )
-export default NameForm
+export default ChangeDivForm
