@@ -14,9 +14,6 @@ class ChangeDivForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log(event.target.height.value)
-    console.log(event.target.width.value)
-    console.log(event.target.color.value)
     this.setState({
       height: parseInt(event.target.height.value,10),
       width: parseInt(event.target.width.value, 10),
