@@ -1,0 +1,16 @@
+.shape-view__main-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape-view__view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  letter-spacing: 0;
+  user-select: none;
+  cursor: default;
+}

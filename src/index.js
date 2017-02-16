@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ChangeDivForm from './App';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import ShapeApplication from './ShapeApplication'
+
+import './index.css'
 
 ReactDOM.render(
-  <ChangeDivForm />,
+  <ShapeApplication />,
   document.getElementById('root')
-);
+)
