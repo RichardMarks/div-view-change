@@ -1,0 +1,59 @@
+.shape-editor__main-container {
+  font-family: monospace;
+  font-size: 18px;
+  background: gray;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.shape-editor__header {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.shape-editor__form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid white;
+  height: 96px;
+}
+
+.shape-editor__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shape-editor__view-container {
+  flex-grow: 1;
+  height: calc(100% - (24px + 98px));
+
+  border-top: 1px solid white;
+}
+
+.shape-editor__label {
+  flex-grow: 1;
+  padding: 8px;
+}
+
+.shape-editor__input:not(.shape-editor__input-color) {
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 10px;
+  background: dimgray;
+  color: white;
+  border: 1px solid white;
+  border-radius: 18px;
+  margin: 10px;
+}
+
+.shape-editor__input-submit {
+  cursor: pointer;
+}
+
+.shape-editor__input:focus {
+  outline: none;
+}
